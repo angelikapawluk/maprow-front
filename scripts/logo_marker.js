@@ -1,10 +1,10 @@
 L.Control.Watermark = L.Control.extend({
-	onAdd: function (map) {
+	onAdd: function () {
 		var img = L.DomUtil.create('img');
 
 		img.src = './img/logo_2.png';
 		img.style.width = '150px';
-		return img;
+		return img
 	},
 });
 

@@ -7,16 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MapaRowerowaZG</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-        crossorigin="" />
-        <link rel="stylesheet" href="dist/css/style.css">
-
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-        crossorigin=""></script>
+        crossorigin="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tomik23/autocomplete@1.8.3/dist/css/autocomplete.min.css">
+    <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://example.com/fontawesome/v6.1.1/js/all.js" data-auto-replace-svg></script>
     
 </head>
@@ -25,21 +23,27 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-                <div class="navbar-logo"><img src="./img/logo.jpg" width="24" height="24" class="d-inline-block align-text-top"> MapaRowerowaZG</div>
+                <div class="navbar-logo"><img src="./img/logo.jpg" alt="Logo Ratusza w Zielonej Górze"width="24" height="24" class="d-inline-block align-text-top"> MapaRowerowaZG</div>
                 <form>
                     <div class="row g-3">
-                        <div class="col first">
-                            <input type="search" id="place-search-input" class="form-control" placeholder="Punkt Startowy">
+                        <div class="col">
+                            <input type="text" class="form-control search" placeholder="Punkt Startowy">
+                            <ul class="list-group result-list">
+                            </ul>
                         </div>
+                        
                         <div class="col-auto fa-3x">
-                            <a class="reverse-directions"><i class="fa-solid fa-arrow-right-arrow-left "></i></a>
+                            <a class="reverse-directions"><em class="fa-solid fa-arrow-right-arrow-left "></em></a>
                         </div>
-                        <div class="col second">
-                            <input type="search" id="place-search-input" class="form-control" placeholder="Punkt Docelowy">
+                        <div class="col">
+                            <input type="text" class="form-control search" placeholder="Punkt Docelowy">
+                            <ul class="list-group result-list">
+                            </ul>
                         </div>
                         <div class="col-auto">
-                                <button type="button" class="btn btn-warning" style="width: 30px; height: 30px;"><i class="fa-solid fa-magnifying-glass-location"></i></button>
+                                <button type="button" class="btn btn-warning search-button" style="width: 30px; height: 30px;"><em class="fa-solid fa-magnifying-glass-location"></em></button>
                         </div>
+                        
                     </div>
                     
                 </form>
@@ -47,7 +51,7 @@
         </nav>
     </header>
     <main>
-        <div class="map" id="map"></div>
+        <div id="map"></div>
 
     </main>
     <footer>
@@ -57,14 +61,26 @@
             &Copyright 
         </p>
     </footer>
-    <script src="./scripts/placeSearch.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+            crossorigin=""></script>
     <script src="./scripts/main-map.js" type="text/javascript"></script>
     <script src="./scripts/findMe.js" type="text/javascript"></script>
+    <script src="./scripts/searchPosition.js" type="text/javascript"></script>
     <script src="./scripts/logo_marker.js" type="text/javascript"></script>
+    <script src="./scripts/legend.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/6791422882.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/tomik23/autocomplete@1.8.3/dist/js/autocomplete.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+
     
 </body>
 
